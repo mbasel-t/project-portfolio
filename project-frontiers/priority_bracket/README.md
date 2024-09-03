@@ -1,12 +1,15 @@
 # Priority Bracket
 
 ## Concept overview
+This is a custom data structure built on top of the ArrayList from the Java Collections Framework. When engaging in combat in Frontiers, everyone chooses their action for their turn at the same time, but the order of action execution is determined by the priority level of the action and the speed stat of the action user.
+
 In the Frontiers game, combat is executed in "rounds". At the start of a round, each player chooses their action— for instance,
-attacking another player— and their action is represented as an **Action** object, which is added into a **PriorityBracket** object.
-Different actions have different levels of **priority**. When one Action has a higher priority level than another, it always goes
+attacking another player— at the same time. Their action is represented as an **Action** object, which is added into a **PriorityBracket** object. Different actions have different levels of **priority**. When one Action has a higher priority level than another, it always goes
 first. When two Actions have equal priority values, the tie is broken by the action-user's own **speed**. In the unlikely event that
 two Actions have equal priority and speed, the Action that executes first is randomly determined. Actions are output with this order
 in mind, and are removed when they are read, like a stack or a queue.
+
+Once everyone has chosen their action in this round, every Action is executed in the aforementioned sequence. Then, the next round begins.
 
 ## Action.java
 The version of Action.java included is used specifically for testing PriorityBracket.java's functionality, so it only includes
