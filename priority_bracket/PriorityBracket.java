@@ -1,4 +1,3 @@
-//package project_frontiers;
 import java.util.ArrayList;
 
 public class PriorityBracket {
