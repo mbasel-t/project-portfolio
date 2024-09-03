@@ -66,7 +66,7 @@ public class PriorityBracket {
                 same = (this.actions.size() >= num_same+1 ? this.actions.get(this.actions.size()-num_same).speed() == this.actions.get(this.actions.size()-1-num_same).speed() : false);
             }
             int select = (int)Math.ceil(Math.random() * num_same);
-            System.out.println("RANDOM DETERMINANT; SIZE " + actions.size() + "; EQUAL VALUE COUNT " + num_same + "; RANDOM VAL " + select + "; PRIORITY BRACKET " + actions.get(actions.size()-1).priority() + "; SPEED BRACKET " + actions.get(actions.size()-1).speed());
+            System.out.println((num_same > 1 ? "RANDOM" : "STATIC" ) + " DETERMINANT; Current bracket size " + (actions.size() > 9 ? actions.size() : "0" + actions.size()) + "; Equal value count " + num_same + "; Random value " + select + "; Priority level " + (actions.get(actions.size()-1).priority() < 0 ? actions.get(actions.size()-1).priority() : "+" + actions.get(actions.size()-1).priority() ) + "; Speed stat " + actions.get(actions.size()-1).speed());
             result = this.actions.remove(this.actions.size()-select);
         }
         return result;
@@ -86,27 +86,27 @@ public class PriorityBracket {
     // Tester; TEST PASSED
     public static void main(String[] args) {
         PriorityBracket bracket = new PriorityBracket();
-        bracket.add(new Action(null, 0, 1));
-        bracket.add(new Action(null, -2, 8));
-        bracket.add(new Action(null, 0, 4));
-        bracket.add(new Action(null, 0, 2));
-        bracket.add(new Action(null, 0, 5));
+        bracket.add(new Action(0, 1));
+        bracket.add(new Action(-2, 8));
+        bracket.add(new Action(0, 4));
+        bracket.add(new Action(0, 2));
+        bracket.add(new Action(0, 5));
 
-        bracket.add(new Action(null, 2, 1));
-        bracket.add(new Action(null, 1, 4));
-        bracket.add(new Action(null, 4, 2));
-        bracket.add(new Action(null, -5, 5));
-        bracket.add(new Action(null, 7, 3));
-        bracket.add(new Action(null, 1, 4));
-        bracket.add(new Action(null, 2, 2));
-        bracket.add(new Action(null, 2, 3));
-        bracket.add(new Action(null, 4, 4));
+        bracket.add(new Action(2, 1));
+        bracket.add(new Action(1, 4));
+        bracket.add(new Action(4, 2));
+        bracket.add(new Action(-5, 5));
+        bracket.add(new Action(7, 3));
+        bracket.add(new Action(1, 4));
+        bracket.add(new Action(2, 2));
+        bracket.add(new Action(2, 3));
+        bracket.add(new Action(4, 4));
 
-        bracket.add(new Action(null, 0, 3));
-        bracket.add(new Action(null, 0, 4));
-        bracket.add(new Action(null, 0, 2));
-        bracket.add(new Action(null, 0, 3));
-        bracket.add(new Action(null, 0, 4));
+        bracket.add(new Action(0, 3));
+        bracket.add(new Action(0, 4));
+        bracket.add(new Action(0, 2));
+        bracket.add(new Action(0, 3));
+        bracket.add(new Action(0, 4));
 
         boolean result = true;
         Action lastElement = bracket.pop();
@@ -120,6 +120,6 @@ public class PriorityBracket {
             }
             lastElement = currentElement;
         }
-        //System.out.println("\nTEST RESULT: " + (result ? "passed" : "failed"));
+        System.out.println("\nTEST RESULT: " + (result ? "passed" : "failed"));
     }
 }
