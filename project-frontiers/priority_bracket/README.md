@@ -18,7 +18,7 @@ includes the instance variables and methods necessary for the main file to execu
 object.
 
 ## PriorityBracket.java
-The PriorityBracket.java only contains two instance variables: "actions" (ArrayList<Action>) and "sorted" (boolean). actions is the
+The PriorityBracket.java only contains two instance variables: "actions" (ArrayList\<Action\>) and "sorted" (boolean). actions is the
 underlying data structure that manages inputs and outputs for the PriorityBracket, while sorted keeps track of whether actions is
 sorted or not, so that it can always output actions in the intended "priority then speed then randomness" order, while also only
 sorting when necessary.
