@@ -1,4 +1,4 @@
-## 394. Decode String
+# 394. Decode String
 
 Given an encoded string, return its decoded string.
 
@@ -28,3 +28,12 @@ Constraints:
 * s consists of lowercase English letters, digits, and square brackets '[]'.
 * s is guaranteed to be a valid input.
 * All the integers in s are in the range [1, 300].
+
+## My solution
+The biggest two difficulties for this problem were, a) the existence of non-encoded strings (e.g. the 'b' in "2[a]b"), and b) doubly-encoded strings (e.g. the "2[b]" in "2[2[b]]"). In order to solve this, I split the problem into two parts.
+
+### Method evaluateString
+(WIP)
+
+### Method evaluateCommand
+(WIP)
