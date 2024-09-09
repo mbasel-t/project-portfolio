@@ -30,10 +30,10 @@ Constraints:
 * All the integers in s are in the range [1, 300].
 
 ## My solution
-The biggest two difficulties for this problem were, a) the existence of non-encoded strings (e.g. the 'b' in "2[a]b"), and b) doubly-encoded strings (e.g. the "2[b]" in "2[2[b]]"). In order to solve this, I split the problem into two parts.
+The biggest two difficulties for this problem were, a) the existence of non-encoded strings (e.g. the 'b' in "2[a]b"), and b) doubly-encoded strings (e.g. the "2[b]" in "2[2[b]]"). In order to solve this, I convert the input String into an array of chars and split the problem into two parts.
+
+### Method evaluateCommand (WIP)
+The method evaluateCommand processes commands exclusively. It 
 
 ### Method evaluateString
-(WIP)
-
-### Method evaluateCommand
-(WIP)
+The method evaluateString processes arrays of characters to find encoded strings within them, then sends them to evaluateCommand for it to process and return. In this way, evaluateString can take any array of characters and return a version of it with all commands inside processed.
