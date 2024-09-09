@@ -27,7 +27,7 @@ Example 3:
 
 > Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
 
-### My solution
+## My solution
 For this problem, in order to run as quickly as possible, I chose to split the input "s" by spaces into an array of Strings "words". I also
 create a new StringBuilder "result" which will store the problem solution. Using the fence post method, I begin by appending solutions to
 the StringBuilder from the back of "words" to the front until the StringBuilder's length is higher than 0, then I continue traversing "words"
