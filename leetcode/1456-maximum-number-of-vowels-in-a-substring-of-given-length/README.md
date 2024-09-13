@@ -36,6 +36,9 @@ Constraints:
 * 1 <= k <= s.length
 
 ## My solution
+* Runtime beats 95.50%
+* Memory beats 13.58%
+
 First, the String is converted to an array of characters. A sliding window solution is implemented, iterating from the back of the array
 to the front. The window is first set up by checking the last K characters, then is slid down, keeping track of when a vowel enters or
 leaves the window. When a vowel enters the window, the current number of vowels in the window is compared to the highest number seen, and,
