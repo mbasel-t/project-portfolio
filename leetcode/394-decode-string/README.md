@@ -29,11 +29,17 @@ Constraints:
 * s is guaranteed to be a valid input.
 * All the integers in s are in the range [1, 300].
 
-## My solution (desc. WIP)
+## My solution
+* Runtime beats 77.17%
+* Memory beats 48.86%
+
 The biggest two difficulties for this problem were, a) the existence of non-encoded strings (e.g. the 'b' in "2[a]b"), and b) doubly-encoded strings (e.g. the "2[b]" in "2[2[b]]"). In order to solve this, I convert the input String into an array of chars and split the problem into two parts.
 
-### Method evaluateCommand (WIP)
-The method evaluateCommand processes commands exclusively. It 
+### Method evaluateCommand
+The method evaluateCommand processes commands exclusively. It assumes the import format "INTEGER[STRING", where INTEGER is the number of times STRING is repeated. After finding the opening bracket, evaluateCommand converts the number from string form to integer form, then sends the string portion to be processed by evaluateString. After receiving the result, it returns this result, repeated a number of times equal to the given integer.
 
-### Method evaluateString (WIP)
-The method evaluateString processes arrays of characters to find encoded strings within them, then sends them to evaluateCommand for it to process and return. In this way, evaluateString can take any array of characters and return a version of it with all commands inside processed.
+### Method evaluateString
+The method evaluateString iterates through its input, adding items it finds one-by-one to a StringBuilder for it to return. If it finds an
+integer, it will look for the opening bracket, then will find the accompanying closing bracket. It sends a substring from the start of the integer up until the closing bracket to be processed by evaluateCommand, then adds this result to the StringBuilder. Once this is complete, the StringBuilder is returned.
+
+Because evaluateString uses evaluateCommand to process every command within it, it is applied to the input. The resulting StringBuilder is converted to a String and returned.
