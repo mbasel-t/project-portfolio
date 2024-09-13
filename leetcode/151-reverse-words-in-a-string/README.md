@@ -1,4 +1,4 @@
-## 151. Reverse Words in a String
+## 151. Reverse Words in a String [medium]
 
 Given an input string s, reverse the order of the words.
 
@@ -28,6 +28,9 @@ Example 3:
 > Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
 
 ## My solution
+* Runtime beats 92.93%
+* Memory beats 57.82%
+
 For this problem, in order to run as quickly as possible, I chose to split the input "s" by spaces into an array of Strings "words". I also
 create a new StringBuilder "result" which will store the problem solution. Using the fence post method, I begin by appending solutions to
 the StringBuilder from the back of "words" to the front until the StringBuilder's length is higher than 0, then I continue traversing "words"
