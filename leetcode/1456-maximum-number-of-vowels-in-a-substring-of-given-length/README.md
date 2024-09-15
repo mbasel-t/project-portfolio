@@ -1,4 +1,4 @@
-# 1459. Maximum Number of Vowels In a Substring of Given Length
+# 1459. Maximum Number of Vowels In a Substring of Given Length [medium]
 
 Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.
 
