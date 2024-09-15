@@ -37,4 +37,4 @@ Constraints:
 
 ## My solution
 * Runtime beats 92.34%
-* Memory beats 65.20%
+* Memory beats 66.48%
