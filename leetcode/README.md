@@ -16,7 +16,7 @@
 ## 649. Dota2 Senate [medium]
 
 * Runtime beats 92.34%
-* Memory beats 65.2%
+* Memory beats 66.48%
 
 ## 1456. Maximum Number of Vowels in a Substring of Given Length [medium]
 
