@@ -1,4 +1,4 @@
-## 151. Reverse Words in a String [medium]
+# 151. Reverse Words in a String [medium]
 
 Given an input string s, reverse the order of the words.
 
