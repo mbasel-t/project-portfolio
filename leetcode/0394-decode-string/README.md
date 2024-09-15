@@ -1,4 +1,4 @@
-# 394. Decode String
+# 394. Decode String [medium]
 
 Given an encoded string, return its decoded string.
 
