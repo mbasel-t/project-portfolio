@@ -38,3 +38,5 @@ Constraints:
 ## My solution
 * Runtime beats 92.34%
 * Memory beats 66.48%
+
+For this problem, all senators are placed into a queue in order, then they are continually polled in rounds; this is the "banning phase". The optimal move for any senator is to ban the next opposing senator's rights. When a senator makes their ban, they are placed to the back of the queue. The ban is postponed until the next opposing senator is found, by storing the number of opposing senator bans that are made but not executed. When the opposing senator is found, they are unable to impose a ban, and are removed from the queue. This is repeated until no bans are executed in a round (size at the end of this round equals size at the end of the previous round), signifying that there are no bans left to make, and one party controls the entire senate. Whichever party is in control is deemed the winner.
