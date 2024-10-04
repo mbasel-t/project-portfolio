@@ -26,5 +26,5 @@ Constraints:
 * 0 <= height[i] <= 104
 
 ## My solution
-* Runtime beats 94.83%
-* Memory beats 91.92%
+* Runtime beats 95.09%
+* Memory beats 98.06%
