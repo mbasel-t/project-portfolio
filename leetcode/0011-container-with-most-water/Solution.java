@@ -16,4 +16,8 @@ class Solution {
 
         return highestArea;
     }
+
+    private static int computeArea(int height1, int height2, int diff) {
+        return Math.min(height1, height2) * diff;
+    }
 }
