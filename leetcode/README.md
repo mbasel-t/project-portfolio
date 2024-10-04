@@ -15,10 +15,15 @@
 
 ## 649. Dota2 Senate [medium]
 
-* Runtime beats 92.34%
-* Memory beats 66.48%
+* Runtime beats 95.00%
+* Memory beats 79.52%
 
 ## 1456. Maximum Number of Vowels in a Substring of Given Length [medium]
 
 * Runtime beats 95.50%
 * Memory beats 13.58%
+
+## 2095. Delete the Middle Node of a Linked List [medium]
+
+* Runtime beats 99.77%
+* Memory beats 91.99%
