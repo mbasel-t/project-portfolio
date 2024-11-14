@@ -1,3 +1,4 @@
+//package project_frontiers;
 import java.util.ArrayList;
 
 public class PriorityBracket {
@@ -27,7 +28,9 @@ public class PriorityBracket {
         }
 
         this.actions.add(action);
-        //System.out.println("ADDED ACTION W/ SPEED VAL " + action.speed() + " && PRIO VAL " + action.priority() + "; " + (this.sorted ? "BRACKET SORTED\n" : "BRACKET NOT SORTED\n"));
+        
+        // TEST PRINT:
+        System.out.println("ADDED ACTION W/ SPEED VAL " + action.speed() + " && PRIO VAL " + action.priority() + "; " + (this.sorted ? "BRACKET SORTED\n" : "BRACKET NOT SORTED\n"));
     } // method add
 
     /** ArrayList sorter (fastest in back, slowest in front) */
@@ -45,22 +48,20 @@ public class PriorityBracket {
                 for (int i = 1; i < this.actions.size(); i++) {
                     // case: out of order due to priority
                     if (actions.get(i).priority() < this.actions.get(i-1).priority()) {
-                        Action swapper = this.actions.get(i);
-                        this.actions.set(i, this.actions.get(i-1));
-                        this.actions.set(i-1, swapper);
+                        this.actions.set(i-1, this.actions.set(i, this.actions.get(i-1)));
                         this.sorted = false;
                     }
                     // case: same priority, but out of order due to speed
                     else if (actions.get(i).priority() == this.actions.get(i-1).priority() && actions.get(i).speed() < this.actions.get(i-1).speed()) { 
-                        Action swapper = this.actions.get(i);
-                        this.actions.set(i, this.actions.get(i-1));
-                        this.actions.set(i-1, swapper);
+                        this.actions.set(i-1, this.actions.set(i, this.actions.get(i-1)));
                         this.sorted = false;
                     }
                 }
-                //System.out.println("A ROUND OF SORTING HAS BEEN COMPLETED");
+                // TEST PRINT:
+                System.out.println("A ROUND OF SORTING HAS BEEN COMPLETED");
             }
-            //System.out.println("SORTING COMPLETED\n");
+            // TEST PRINT:
+            System.out.println("SORTING COMPLETED\n");
         } else {
             // array of 0 or 1 items is always sorted
             this.sorted = true;
@@ -84,7 +85,10 @@ public class PriorityBracket {
 
             // select and remove fastest value; if multiple are tied, pick at random
             int select = (int)Math.ceil(Math.random() * num_same);
+
+            // TEST PRINT:
             System.out.println((num_same > 1 ? "RANDOM" : "STATIC" ) + " DETERMINANT; Current bracket size " + (actions.size() > 9 ? actions.size() : "0" + actions.size()) + "; Equal value count " + num_same + "; Random value " + select + "; Priority level " + (actions.get(actions.size()-1).priority() < 0 ? actions.get(actions.size()-1).priority() : "+" + actions.get(actions.size()-1).priority() ) + "; Speed stat " + actions.get(actions.size()-1).speed());
+            
             result = this.actions.remove(this.actions.size()-select);
         }
         return result;
@@ -104,27 +108,12 @@ public class PriorityBracket {
     // Tester; TEST PASSED
     public static void main(String[] args) {
         PriorityBracket bracket = new PriorityBracket();
-        bracket.add(new Action(0, 1));
-        bracket.add(new Action(-2, 8));
-        bracket.add(new Action(0, 4));
-        bracket.add(new Action(0, 2));
-        bracket.add(new Action(0, 5));
+        
+        int iterations = (int)Math.floor(Math.random() * 10 + 20); // 20-29 iterations
 
-        bracket.add(new Action(2, 1));
-        bracket.add(new Action(1, 4));
-        bracket.add(new Action(4, 2));
-        bracket.add(new Action(-5, 5));
-        bracket.add(new Action(7, 3));
-        bracket.add(new Action(1, 4));
-        bracket.add(new Action(2, 2));
-        bracket.add(new Action(2, 3));
-        bracket.add(new Action(4, 4));
-
-        bracket.add(new Action(0, 3));
-        bracket.add(new Action(0, 4));
-        bracket.add(new Action(0, 2));
-        bracket.add(new Action(0, 3));
-        bracket.add(new Action(0, 4));
+        for(int i = 0; i < iterations; i++) {
+            bracket.add(new Action((int)Math.floor(Math.random()*10 - 5), (int)Math.ceil(Math.random()*8)));
+        }
 
         boolean result = true;
         Action lastElement = bracket.pop();
